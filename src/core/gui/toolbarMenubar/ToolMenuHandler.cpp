@@ -37,6 +37,7 @@
 #include "ToolZoomSlider.h"          // for ToolZoomSlider
 #include "config-dev.h"
 
+
 using std::string;
 
 ToolMenuHandler::ToolMenuHandler(Control* control, GladeGui* gui):
@@ -121,12 +122,23 @@ void ToolMenuHandler::unloadToolbar(GtkWidget* toolbar) {
     gtk_widget_hide(toolbar);
 }
 
+
+
+
+
 void ToolMenuHandler::load(ToolbarData* d, GtkWidget* toolbar, const char* toolbarName, bool horizontal) {
     int count = 0;
 
     const Palette& palette = this->control->getSettings()->getColorPalette();
     size_t colorIndex{};
 
+    // Build our own right toolbar.
+    if (strcmp(toolbarName, "toolbarRight1") == 0) {
+        scribbleToolbar.buildToolbar(toolbar);
+        return;
+    }
+
+    // Normal (default) xournal++ toolbars
     for (ToolbarEntry* e: d->contents) {
         if (e->getName() == toolbarName) {
             for (ToolbarItem* dataItem: e->getItems()) {

@@ -144,6 +144,17 @@ toolbar button
 }
 */
 
+#tbRight1 button
+{
+	/* background-color: #00f; */
+}
+
+#tbRight1
+{
+	background-color: #222;
+	padding: 10px 5px;
+}
+
 
 /*
 Labels for subsections of the Settings dialog

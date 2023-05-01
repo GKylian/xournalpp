@@ -410,6 +410,8 @@ void Control::actionPerformed(ActionType type, ActionGroup group, GtkToolButton*
         return;
     }
 
+    g_message("Performing action of type %d", (int)type);
+
     // If PDF toolbox is currently shown, end the PDF selection unless:
     //   1) Hand tool action
     //   2) zoom action (toolbox will be hidden in ZoomControl::zoomChanged)

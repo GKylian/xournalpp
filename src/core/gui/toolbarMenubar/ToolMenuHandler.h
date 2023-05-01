@@ -25,6 +25,8 @@
 #include "gui/IconNameHelper.h"      // for IconNameHelper
 #include "util/Color.h"              // for Color
 
+#include "Scribble/ScribbleToolbar.h"
+
 class AbstractToolItem;
 class FontButton;
 class GladeGui;
@@ -120,6 +122,8 @@ private:
 
     std::vector<AbstractToolItem*> toolItems;
     std::vector<MenuItem*> menuItems;
+
+    ScribbleToolbar scribbleToolbar;
 
     ToolButton* undoButton = nullptr;
     ToolButton* redoButton = nullptr;
